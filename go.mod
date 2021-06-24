@@ -1,4 +1,4 @@
-module morimasu3590/goredis_pubsub_simple
+module github.com/morimasu3590/goredis_pubsub_simple
 
 go 1.16
 
