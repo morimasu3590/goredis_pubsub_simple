@@ -30,7 +30,7 @@ func NewRedis(address string, password string) Redis {
 	return *redis
 }
 
-func (redisPtr *Redis) Redis_SUBSCRIBE() error {
+func (redisPtr *Redis) RedisSUBSCRIBE() error {
 	pubsub := redisPtr.Connector.Subscribe(ctx, redisPtr.Channel)
 	redisPtr.PubSub = pubsub
 	for {
@@ -49,7 +49,7 @@ func (redisPtr *Redis) Redis_SUBSCRIBE() error {
 
 }
 
-func (redisPtr *Redis) Redis_PSUBSCRIBE() error {
+func (redisPtr *Redis) RedisPSUBSCRIBE() error {
 	pubsub := redisPtr.Connector.PSubscribe(ctx, redisPtr.Channel, redisPtr.StringPattern)
 	redisPtr.PubSub = pubsub
 	for {
